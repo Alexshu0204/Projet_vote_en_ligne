@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html>
    <head>
-       <title>Autentification</title>
+       <title>Authentification</title>
        <meta charset="utf-8" />
+       <link rel="stylesheet" href="mainStyle.css"/>
    </head>
-   <body>
-       <h1>Connexion</h1>
 
-       <form action="acceul.html" method="post">
+<body>
+    <div class="auth_container">
+        <span class="loginTitle">
+            <h1>Page d'authentification</h1>
+        </span>
 
-
+        <!-- Formulaire de connexion -->
+        <form action="acceul.html" method="post">
             <div class="container">
-                <label>Nom d'utilisateur</label>
-                <input name="login" id="login" type="text" required><br/>
-                <label for="mdp">Mot de passe :</label>
-                <input name="mdp" id="mdp" type="password" required><br/>
-                <input type="submit" value="Se connecter" name="send_con">
-                <br/><br/>
-                <a href="oubli.html">Mot de passe oublié ?</a>
-            </div>
+                <div class="greeting">
+                    <h1>Ravi de vous revoir !</h1>
+                </div>
 
-       </form>
-   </body>
-</html>
+                <input name="user" id="username" type="text" placeholder="Utilisateur" required>
+                <input name="mdp" id="password" type="password" placeholder="Mot de passe" required>
+                
+                <div class="RemFog">
+                    <label><input type="checkbox">Se souvenir</label>
+                    <a href="oubli.html">Mot de passe oublié ?</a>
+                </div>
+
+                <input type="submit" id="loginButtom" value="Se connecter" name="send_con">
+            </div>
+        </form>
+    </div>
+</body>

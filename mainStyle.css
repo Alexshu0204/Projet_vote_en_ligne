@@ -1,0 +1,73 @@
+/*On va centrer tout le body*/
+body{
+    background-color: rgb(18, 102, 74);/*couleur de fond temporaire pour mieux distinguer les != éléments*/
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Conteneur principal qui aligne le titre et le formulaire */
+.auth_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;/* Prend 90% de la largeur de l'écran */
+}
+
+/*Titre placé à gauche*/
+.loginTitle{
+    color: #f8f8f8;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.container {/*Tout le contenu du formulaire*/
+    width: 400px;
+    padding: 50px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    
+}
+
+.greeting{/*Message de bienvenu*/
+    display: flex;
+    justify-content: center;
+}
+
+#username, #password{/*Les champs du formulaire*/
+    width: 95%;
+    border: 2px solid black;
+    padding: 12px;
+    border-radius: 20px;
+    margin: 10px 0; /* Centre les champs horizontalement */
+}
+
+
+.RemFog{/*séparer la coche se souvenir et le lien du MDP oublié*/
+    display: flex;
+    justify-content: space-between;
+}
+
+#loginButtom{/*Ajustement du bouton se connecter*/
+    font-size: 18px;
+    background-color: rgb(39, 39, 41);
+    color: white;
+    width: 100%;
+    border: 2px solid rgb(39, 39, 41);
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: 0.5s;
+}
+
+#loginButtom:hover{
+    background-color: white;
+    color: black;
+}
+
