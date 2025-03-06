@@ -4,31 +4,49 @@
        <title>Authentification</title>
        <meta charset="utf-8" />
        <link rel="stylesheet" href="mainStyle.css"/>
+       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'><!--Lien pour télécharger les îcones-->
    </head>
 
-<body>
-    <div class="auth_container">
-        <span class="loginTitle">
-            <h1>Page d'authentification</h1>
-        </span>
+    <body>
 
-        <!-- Formulaire de connexion -->
-        <form action="acceul.html" method="post">
-            <div class="container">
-                <div class="greeting">
-                    <h1>Ravi de vous revoir !</h1>
+        <div class="auth_container">
+
+            <span class="loginTitle">
+                <h1>Page d'authentification</h1>
+            </span>
+
+
+            <!----------------------------------------------Formulaire de connexion---------------------------------------------->
+            <form action="acceul.html" method="post">
+
+                <div class="container">
+
+
+                    <div class="input-container"><!--Ici les champs-->
+                        <i class='bx bxs-user'></i>
+                        <input name="user" id="username" type="text" placeholder="Utilisateur" required>
+                    </div>
+                    
+                    <div class="input-container">
+                        <i class='bx bxs-lock-alt'></i>
+                        <input name="mdp" id="password" type="password" placeholder="Mot de passe" required>
+                    </div>
+
+                    <!--Ici le reste-->
+                    <div class="RemFog">
+                        <label><input type="checkbox">Se souvenir</label>
+                        <a href="oubli.html">Mot de passe oublié ?</a>
+                    </div>
+
+                    <input type="submit" id="loginButtom" value="Se connecter" name="send_con">
+
+
                 </div>
 
-                <input name="user" id="username" type="text" placeholder="Utilisateur" required>
-                <input name="mdp" id="password" type="password" placeholder="Mot de passe" required>
-                
-                <div class="RemFog">
-                    <label><input type="checkbox">Se souvenir</label>
-                    <a href="oubli.html">Mot de passe oublié ?</a>
-                </div>
+            </form>
 
-                <input type="submit" id="loginButtom" value="Se connecter" name="send_con">
-            </div>
-        </form>
-    </div>
-</body>
+        </div>
+
+    </body>
+
+</html>
