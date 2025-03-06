@@ -1,0 +1,135 @@
+/*On va centrer tout le body*/
+body{
+    /***************Fond***************/
+    background-color: rgb(144, 43, 97);
+    background-size: cover;
+
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Conteneur principal qui aligne le titre et le formulaire */
+.auth_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;/* Prend 90% de la largeur de l'écran */
+    height: 100vh; /* S'assure que tout prend la hauteur de l'écran */
+    padding-right: 5vw; /* Ajoute un petit décalage à droite */
+}
+
+/*Titre placé à gauche*/
+.loginTitle{
+    position: absolute;
+    top: 8px;
+    left: 30%;
+    color: #f8f8f8;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Nunito Sans';
+    text-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.adminIcone{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    position: relative;
+    top: 20px;
+    left: 10%;
+}
+
+.adminIcone img{
+    width: 50px;
+    height: 50ox;
+    color: white;
+}
+
+.adminTitle {
+    font-family: 'Nunito Sans';
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(234, 240, 246);
+}
+
+.container {/*Tout le contenu du formulaire*/
+    margin-top: 40px;
+    width: 400px;
+    padding: 60px;
+    background-color:rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    backdrop-filter: blur(4px);
+    
+}
+
+
+.input-container {/*englobe l'input et l'icône*/
+    position: relative;
+    width: 84%;
+}
+
+.input-container i {/*positionne l’icône à l’intérieur du champ*/
+    position: absolute;
+    left: 15px; /* Distance entre l’icône et le bord gauche */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: gray;
+}
+
+.input-container input {/*ajuste l’espacement du texte pour qu’il ne chevauche pas*/
+    font-size: 14px;
+    width: 100%;
+    border: 2px solid black;
+    padding: 15px 15px 15px 45px; /* Ajout d'un padding à gauche pour ne pas chevaucher l’icône */
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+
+
+.RemFog{/*séparer la coche se souvenir et le lien du MDP oublié*/
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+  }
+
+a:hover{
+    text-decoration: underline;
+}
+
+#loginButton{/*Ajustement du bouton se connecter*/
+    font-size: 17px;
+    background: linear-gradient(to right, rgb(6, 167, 17), rgb(9, 154, 65));
+    color: white;
+    width: 100%;
+    border: none; /* Supprime la bordure pour un effet plus propre */
+    padding: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 55px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#loginButton i {
+    font-size: 20px;
+}
+
+#loginButton:hover{
+    background: linear-gradient(to right, rgb(44, 187, 91), rgb(33, 177, 88));
+}
+
