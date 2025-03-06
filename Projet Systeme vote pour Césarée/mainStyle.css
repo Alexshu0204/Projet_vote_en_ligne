@@ -1,7 +1,7 @@
 /*On va centrer tout le body*/
 body{
     /***************Fond***************/
-    background-color: rgb(144, 43, 97);
+    background-image:linear-gradient(rgba(189, 4, 193, 0.3),rgba(135, 5, 158, 0.342)),url(images/depositphotos_216798046-stock-photo-abstract-pastel-soft-colorful-smooth.webp);
     background-size: cover;
 
     font-family: sans-serif;
@@ -11,6 +11,28 @@ body{
     height: 100vh;
     margin: 0;
 }
+
+.header{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(19, 5, 12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.loginTitle{
+    position: absolute;
+    color: #f8f8f8;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Nunito Sans';
+    text-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
 
 /* Conteneur principal qui aligne le titre et le formulaire */
 .auth_container{
@@ -22,17 +44,6 @@ body{
     padding-right: 5vw; /* Ajoute un petit décalage à droite */
 }
 
-/*Titre placé à gauche*/
-.loginTitle{
-    position: absolute;
-    top: 8px;
-    left: 30%;
-    color: #f8f8f8;
-    font-size: 35px;
-    font-weight: bold;
-    font-family: 'Nunito Sans';
-    text-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
 
 .adminIcone{
     display: flex;
@@ -44,26 +55,29 @@ body{
 }
 
 .adminIcone img{
-    width: 50px;
+    width: 65px;
     height: 50ox;
     color: white;
 }
 
 .adminTitle {
     font-family: 'Nunito Sans';
-    font-size: 50px;
+    text-decoration: underline;
+    font-size: 48px;
     font-weight: bold;
     color: rgb(234, 240, 246);
 }
 
 .container {/*Tout le contenu du formulaire*/
     margin-top: 40px;
-    width: 400px;
-    padding: 60px;
-    background-color:rgba(255, 255, 255, 0.8);
+    width: 380px;
+    height: 320px;
+    padding: 70px;
+    background-color:rgba(255, 255, 255, 0.5);
     border-radius: 8px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(3px);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    box-shadow: rgb(104, 6, 42) 0px 20px 30px -10px;
     
 }
 
@@ -85,7 +99,8 @@ body{
 .input-container input {/*ajuste l’espacement du texte pour qu’il ne chevauche pas*/
     font-size: 14px;
     width: 100%;
-    border: 2px solid black;
+    background-color:rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.6);
     padding: 15px 15px 15px 45px; /* Ajout d'un padding à gauche pour ne pas chevaucher l’icône */
     border-radius: 10px;
     margin: 10px 0;
@@ -109,8 +124,8 @@ a:hover{
 }
 
 #loginButton{/*Ajustement du bouton se connecter*/
-    font-size: 17px;
-    background: linear-gradient(to right, rgb(6, 167, 17), rgb(9, 154, 65));
+    font-size: 18px;
+    background: linear-gradient(to right, rgb(49, 167, 6), rgb(9, 154, 11));
     color: white;
     width: 100%;
     border: none; /* Supprime la bordure pour un effet plus propre */
@@ -130,6 +145,6 @@ a:hover{
 }
 
 #loginButton:hover{
-    background: linear-gradient(to right, rgb(44, 187, 91), rgb(33, 177, 88));
+    background: linear-gradient(to right, rgb(56, 187, 44), rgb(33, 177, 40));
 }
 
