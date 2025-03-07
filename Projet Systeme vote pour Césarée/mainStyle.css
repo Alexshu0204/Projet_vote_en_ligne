@@ -1,27 +1,46 @@
-/*On va centrer tout le body*/
-body{
-    /***************Fond***************/
-    background-image:linear-gradient(rgba(189, 4, 193, 0.3),rgba(135, 5, 158, 0.342)),url(images/depositphotos_216798046-stock-photo-abstract-pastel-soft-colorful-smooth.webp);
-    background-size: cover;
+/*création du fond*/
+body {
+    background: linear-gradient(45deg, #370648, #c301d8, #8530fd);
+  }
+  
+  /* Ajout d'un overlay polygonal en SVG */
+  body::after {
+    content: "";
+    position: fixed;/* Fixe l'overlay en arrière-plan */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/triangles.png");
+    opacity: 0.37;
+    pointer-events: none;
+    z-index: -1;/* Met l'overlay en arrière-plan */
+  }
 
+/*paramétrage de l'ensemble du body*/
+body{
     font-family: sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    position: relative;
 }
 
 .header{
     width: 100%;
     height: 100px;
-    background-color: rgb(19, 5, 12);
+    background-color: rgb(19, 5, 12, 0.55);
+    backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 20;
 }
 
 .loginTitle{
@@ -33,51 +52,50 @@ body{
     text-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-
-/* Conteneur principal qui aligne le titre et le formulaire */
+/*paramétrage du conteneur*/
 .auth_container{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 90vw;/* Prend 90% de la largeur de l'écran */
-    height: 100vh; /* S'assure que tout prend la hauteur de l'écran */
-    padding-right: 5vw; /* Ajoute un petit décalage à droite */
+    width: 100%;
+    height: 100%;
+    padding: 0;
 }
 
 
 .adminIcone{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 10px;
     position: relative;
-    top: 20px;
-    left: 10%;
 }
 
 .adminIcone img{
-    width: 65px;
-    height: 50ox;
+    width: 35px;
+    height: 35px;
     color: white;
 }
 
 .adminTitle {
     font-family: 'Nunito Sans';
-    text-decoration: underline;
-    font-size: 48px;
+    font-size: 32px;
     font-weight: bold;
-    color: rgb(234, 240, 246);
+    color: white;
 }
 
-.container {/*Tout le contenu du formulaire*/
-    margin-top: 40px;
-    width: 380px;
-    height: 320px;
-    padding: 70px;
-    background-color:rgba(255, 255, 255, 0.5);
+
+/***************Tout le contenu du formulaire***************/
+.container {
+    margin-top: 20px;
+    width: 400px;
+    height: 350px;
+    padding: 48px;
     border-radius: 8px;
-    backdrop-filter: blur(3px);
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    box-shadow: rgb(104, 6, 42) 0px 20px 30px -10px;
+    backdrop-filter: blur(2px);
+    border: 2.5px solid rgba(255, 255, 255, 0.5);
+    box-shadow: rgb(108, 24, 97) 0px 20px 30px -10px;
+    z-index: 10; /* S'assure qu'il est au-dessus de l'overlay */
     
 }
 
@@ -93,30 +111,39 @@ body{
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
-    color: gray;
+    color: white;
 }
 
 .input-container input {/*ajuste l’espacement du texte pour qu’il ne chevauche pas*/
     font-size: 14px;
     width: 100%;
-    background-color:rgba(255, 255, 255, 0.5);
-    border: 2px solid rgba(255, 255, 255, 0.6);
+    background-color:rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     padding: 15px 15px 15px 45px; /* Ajout d'un padding à gauche pour ne pas chevaucher l’icône */
     border-radius: 10px;
     margin: 10px 0;
+    color: white;
 }
 
+.input-container input::placeholder {/*configuration du placeholder*/
+    color: white;
+}
 
+.input-container input:focus{/* Personnalisation de l'apparence de l'input lorsqu'il est focus */
+    outline: none;/*enlève le contour par défaut*/
+}
 
 .RemFog{/*séparer la coche se souvenir et le lien du MDP oublié*/
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+    color: white;
 }
+
 
 a {
     text-decoration: none;
-    color: black;
+    color: white;
   }
 
 a:hover{
@@ -125,15 +152,14 @@ a:hover{
 
 #loginButton{/*Ajustement du bouton se connecter*/
     font-size: 18px;
-    background: linear-gradient(to right, rgb(49, 167, 6), rgb(9, 154, 11));
-    color: white;
+    background-color: white;
+    color: rgb(71, 5, 88);
     width: 100%;
     border: none; /* Supprime la bordure pour un effet plus propre */
     padding: 18px;
     border-radius: 30px;
     cursor: pointer;
     margin-top: 55px;
-    transition: 0.5s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,7 +170,8 @@ a:hover{
     font-size: 20px;
 }
 
-#loginButton:hover{
-    background: linear-gradient(to right, rgb(56, 187, 44), rgb(33, 177, 40));
+#loginButton:hover {
+    background-color: rgb(234, 219, 236);
+    color: rgb(98, 23, 116);
+    border: 1.3px solid rgb(98, 23, 116);
 }
-
