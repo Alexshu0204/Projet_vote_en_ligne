@@ -3,6 +3,7 @@
    <head>
        <title>Authentification</title>
        <meta charset="utf-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <link rel="stylesheet" href="mainStyle.css"/>
        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'><!--Lien pour télécharger les icônes-->
        <link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
@@ -19,7 +20,7 @@
 
 
             <!----------------------------------------------Formulaire de connexion---------------------------------------------->
-            <form action="acceul.html" method="post">
+            <form id="loginForm" action="acceuil.html" method="post">
 
                 <div class="container">
 
@@ -41,22 +42,31 @@
                         <input name="mdp" id="password" type="password" placeholder="Mot de passe" required>
                     </div>
 
+                    <i id="togglePassword" class='bx bx-toggle-left'></i>
+
+
                     <!--Ici le reste-->
                     <div class="RemFog">
-                        <label><input type="checkbox">Se souvenir</label>
                         <a href="oubli.html">Mot de passe oublié ?</a>
                     </div>
 
                     <button type="submit" id="loginButton" name="send_con">
-                        Se connecter <i class='bx bx-chevron-right'></i>
+                        Se connecter 
+                        <i class='bx bx-chevron-right'></i>
+                        <div class="loader"></div>
                     </button>
                     
+                     <!--Message d'erreur caché-->
+                    <p id="errorMessage" class="error-message">Nom d'utilisateur ou mot de passe incorrect. Veuillez vérifier vos informations et réessayez.</p>
+
 
                 </div>
 
             </form>
 
         </div>
+
+        <script src="script.js"></script>
 
     </body>
 
