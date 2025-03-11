@@ -197,7 +197,7 @@ a:hover{
     background-color: white;
     color: rgb(71, 5, 88);
     width: 100%;
-    min-height: 50px; /* Assurez-vous que la hauteur reste constante */
+    min-height: 50px; 
     position: relative; /* Permet de positionner l'animation sans affecter le texte */
     border: none;
     padding: 18px;
@@ -208,18 +208,39 @@ a:hover{
     align-items: center;
     justify-content: center;
     gap: 10px;
+    transition: all 0.5s;
 }
 
-#loginButton i {
-    font-size: 20px;
+#loginButton {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#loginButton:after {
+    content: '»';
+    font-size: 22px;
+    position: absolute;
+    opacity: 0;  
+    top: 14px;
+    right: -20px;
+    transition: 0.8s;
 }
 
 #loginButton:hover {
     background-color: rgb(234, 219, 236);
     color: rgb(98, 23, 116);
     border: 1.3px solid rgb(98, 23, 116);
-    transition: 0.3s;
+    padding-right: 24px;
+    padding-left:8px;
 }
+
+#loginButton:hover:after{
+    opacity: 1;
+    right: 110px;
+} 
+
 
 /*Animation du bouton de connexion*/
 #loginButton .loader {
