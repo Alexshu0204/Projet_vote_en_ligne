@@ -122,6 +122,20 @@ body{
 }
 
 
+/* Désactiver le changement de style par l'autocomplétion */
+.input-container input:-webkit-autofill,
+.input-container input:-webkit-autofill:hover, 
+.input-container input:-webkit-autofill:focus, 
+.input-container input:-webkit-autofill:active {
+    -webkit-text-fill-color: white !important; /* Garde le texte en blanc */
+    font-size: 16px !important; /* Garde la taille du texte du placeholder */
+    background-color: rgba(255, 255, 255, 0.3) !important; /* Garde le fond transparent */
+    box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.3) inset !important; /* Empêche le changement de couleur */
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    transition: background-color 5000s ease-in-out 0s; /* Empêche le changement progressif */
+}
+
+
 .input-container {/*englobe l'input et l'icône*/
     position: relative;
     width: 84%;
@@ -145,6 +159,11 @@ body{
     border-radius: 10px;
     margin: 10px 0;
     color: white;
+    transition: 0.165s;
+}
+
+.input-container input:hover{
+    background-color:rgba(250, 234, 234, 0.375);
 }
 
 .input-container input::placeholder {/*configuration du placeholder*/
@@ -154,7 +173,6 @@ body{
 .input-container input:focus{/* Personnalisation de l'apparence de l'input lorsqu'il est focus */
     outline: none;/*enlève le contour par défaut*/
 }
-
 
 
 /*Toggle*/
@@ -169,7 +187,7 @@ body{
 }
 
 #togglePassword:hover{
-    background-color:rgba(255, 255, 255, 0.3);
+    background-color:rgba(250, 234, 234, 0.375);
     border-radius: 50px;
     transition: 0.3s;
 }
@@ -190,6 +208,7 @@ a {
 
 a:hover{
     text-decoration: underline;
+    color:rgba(255, 255, 255, 0.793);
 }
 
 #loginButton{/*Ajustement du bouton se connecter*/
@@ -239,6 +258,7 @@ a:hover{
 #loginButton:hover:after{
     opacity: 1;
     right: 110px;
+    color: rgb(98, 23, 116);
 } 
 
 
