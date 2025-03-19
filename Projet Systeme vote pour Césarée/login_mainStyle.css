@@ -1,6 +1,6 @@
 /*création du fond*/
 body {
-    background: linear-gradient(45deg, #6e0156b5, #9b0abb, #661fa1ec);
+    background: linear-gradient(45deg, #700b5ab5, #9d24b9, #7538a7ec);
   }
   
   /* Ajout d'un overlay polygonal en SVG */
@@ -49,7 +49,7 @@ body{
 .header{
     width: 100%;
     height: 100px;
-    background-color: rgb(19, 5, 12, 0.55);
+    background-color: rgba(19, 5, 12, 0.432);
     backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
@@ -115,7 +115,7 @@ body{
     padding: 48px;
     border-radius: 8px;
     backdrop-filter: blur(2px);
-    border: 2.5px solid rgba(208, 196, 237, 0.5);
+    border: 8px double rgba(208, 196, 237, 0.5);
     box-shadow: rgb(108, 24, 97) 0px 20px 30px -10px;
     z-index: 10; /* S'assure qu'il est au-dessus de l'overlay */
     
@@ -162,16 +162,14 @@ body{
     transition: 0.165s;
 }
 
-.input-container input:hover{
-    background-color:rgba(250, 234, 234, 0.375);
-}
-
 .input-container input::placeholder {/*configuration du placeholder*/
     color: white;
 }
 
 .input-container input:focus{/* Personnalisation de l'apparence de l'input lorsqu'il est focus */
     outline: none;/*enlève le contour par défaut*/
+    box-shadow: 3px 3px rgba(9, 0, 0, 0.2);
+    background-color:rgba(250, 234, 234, 0.375);
 }
 
 

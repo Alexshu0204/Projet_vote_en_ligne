@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (username.value === "admin" && password.value === "1234") {
                 finishLoading(); //Termine la barre avant de rediriger
-                window.location.href = "acceuil.html";
+                window.location.href = "accueil.php";
             } else {
                 errorMessage.style.display = "block";
                 username.classList.add("input-error");
