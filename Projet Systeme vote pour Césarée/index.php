@@ -7,6 +7,7 @@
        <link rel="stylesheet" href="login_mainStyle.css"/>
        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'><!--Lien pour télécharger les icônes-->
        <link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
+       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
    </head>
 
     <body>
