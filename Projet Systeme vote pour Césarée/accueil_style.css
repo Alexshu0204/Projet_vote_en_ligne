@@ -52,11 +52,11 @@ body {
 
 .evnt_container{
     font-family: 'Montserrat', sans-serif;
-    margin-top: 65px;
+    margin-top: 79px;
     width: 53%;
     height: auto;
     min-height: 590px;
-    padding: 30px;
+    padding: 25px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -86,11 +86,13 @@ label span {
 }
 
 #eventID{
-    font-size: 13px;
+    margin-bottom: 15px;  /* Espace en dessous */
+    padding: 20px;  /* Ajuste le padding interne pour respirer */
+
+    font-size: 14px;
     border-radius: 30px;
     width: 100%;
     height: 50px;
-    padding:10px;
     border: none;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     transition: 0.165s;
@@ -112,10 +114,12 @@ label span {
 }
 
 #descriptionID{
-    font-size: 13px;
+    margin-bottom: 15px;  /* Espace en dessous */
+    padding: 12px;  /* Ajuste le padding interne pour respirer */
+
+    font-size: 14px;
     border-radius: 8px;
     width: 100%;
-    padding:10px;
     height: auto;
     min-height: 150px;
     max-height: 400px; /* Pour limiter la hauteur si nécessaire */
@@ -154,9 +158,9 @@ label span {
     font-size: 14.5px;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
-    padding: 25px;
+    padding: 20px;
 
 /*Ajout d’un effet "verre dépoli" au contenu de la date*/
     background-color: rgba(246, 217, 208, 0.2);
@@ -179,8 +183,15 @@ label span {
     text-shadow: 1px 1px 2px rgb(64, 12, 12);
 }
 
-.underline {
-    text-decoration: underline;
+.highlight {
+    background-color: #2fd316;
+    text-underline-position: under; /*abaisser le soulignage*/
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.highlight-2 {
+    background-color: #d31616;
     text-underline-position: under; /*abaisser le soulignage*/
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -248,13 +259,12 @@ label span {
     margin: 28px auto 0 auto;
     border: none;
     border-radius: 12px;
-    width: 80%;
+    width: 70%;
     padding:20px;
-    color: rgba(113, 28, 47, 0.75);
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.726);
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-    transition: color 0.28s ease;
+    color: rgba(0, 0, 0, 0.992);
+    background-color: rgba(255, 255, 255, 0.547);
+    box-shadow: 0 8px 32px rgba(55, 0, 44, 0.5);
+    transition: color 0.2s ease;
     z-index: 1;
 }
 
@@ -275,8 +285,8 @@ label span {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(34, 220, 24, 0.803);
-    transition: width 0.25s ease-in-out;
+    background-color: rgb(2, 172, 36);
+    transition: width 0.27s ease-in-out;
     z-index: 0;
 }
 
@@ -286,7 +296,23 @@ label span {
 
 #createButtonID:hover{
     color: rgb(255, 255, 255);
-    text-shadow: 0.5px 0.5px 1px rgb(64, 12, 12);
+    text-shadow: 1px 1px 3px rgb(41, 5, 5);
+    box-shadow: 0 0 8px rgba(135, 79, 184, 0.2);
+}
+
+
+/*Barre de progression*/
+#progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background: linear-gradient(90deg, #ff007a, #ff4800, #de006f);
+    z-index: 10000;
+    transition: width 0.2s ease-out, opacity 0.4s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(255, 0, 122, 0.6);
+    border-radius: 2px;
 }
 
 

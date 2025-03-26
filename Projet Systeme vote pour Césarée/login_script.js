@@ -1,3 +1,4 @@
+// Attend que tout le HTML soit chargé avant d'exécuter la fonction
 document.addEventListener("DOMContentLoaded", function () {
     const progressBar = document.getElementById("progressBar");
     const loginForm = document.getElementById("loginForm");
@@ -46,7 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
         progressBar.style.width = "100%";
         setTimeout(() => {
             progressBar.style.opacity = "0";
-            setTimeout(() => progressBar.style.width = "0%", 500);
+            setTimeout(() => {
+                progressBar.style.width = "0%";
+            }, 500);
         }, 500);
     }
 
@@ -73,16 +76,15 @@ document.addEventListener("DOMContentLoaded", function () {
         document.title = "Connexion en cours...";
         startLoading(); // On démarre la barre de progression
 
-
         /***********************************************************************
-        -------------------------- Simuler une reqête---------------------------
-        --------------(à modifier pour le back end ultérieurement)--------------
+        -------------------------- Simuler une requête---------------------------
+        -----(à modifier pour laisser gérer le dév back-end ultérieurement)-----
         ***********************************************************************/
         setTimeout(() => {
             document.title = "Authentification";
 
             if (username.value === "admin" && password.value === "1234") {
-                finishLoading(); //Termine la barre avant de rediriger
+                finishLoading(); // Termine la barre avant de rediriger
                 window.location.href = "accueil.php";
             } else {
                 errorMessage.style.display = "block";
@@ -90,10 +92,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 password.classList.add("input-error");
             }
 
-
             loginButton.classList.remove("loading");
             loginButton.disabled = false;
             finishLoading(); // Assure que la barre disparaît en cas d'erreur aussi
-        }, 2000);
+        }, 2400);
     });
 });
