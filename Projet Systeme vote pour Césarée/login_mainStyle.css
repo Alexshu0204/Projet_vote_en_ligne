@@ -1,7 +1,7 @@
 /*création du fond*/
-body {
-    background: linear-gradient(45deg, #675accbc, #748bd0db, #5040a9c9);
-  }
+/*body {
+    
+  }*/
   
   /* Ajout d'un overlay polygonal en SVG */
   body::after {
@@ -111,14 +111,14 @@ body{
 
 
 .container {
-    background: rgba(82, 103, 182, 0.65);
+    background: rgba(3, 14, 54, 0.773);
     margin-top: 20px;
     width: 400px;
     height: 380px;
     padding: 48px;
     border-radius: 8px;
     backdrop-filter: blur(1px);
-    border: 2px solid rgba(255, 255, 255, 0.838);
+    border: none;
     box-shadow: rgba(75, 48, 128, 0.96) 0px 20px 30px -10px;
     z-index: 10; /* S'assure qu'il est au-dessus de l'overlay */
     
