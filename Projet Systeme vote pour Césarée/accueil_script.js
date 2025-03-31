@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const startDate = document.getElementById("dateStartID");
     const endDate = document.getElementById("dateEndID");
 
-    //ON contrôle sur les dates
+    //ON contrôle les dates
     function validateDates(){
         const startDate = new Date(eventStartDateInput.value);
         const endDate = new Date(eventEndDateInput.value);
@@ -43,10 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
         let width = 0;
     
         function animateProgress() {
-            if (width < 85) {
-                width += Math.random() * 10;
+            if (width < 100) {
+                width += Math.random() * 20;
                 progressBar.style.width = width + "%";
-                setTimeout(animateProgress, 150);
+                setTimeout(animateProgress, 80);
             }
         }
         animateProgress();
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 createButton.disabled = false;
 
                 eventForm.submit(); // Soumission du formulaire après chargement
-            }, 2400);//Délai de chargement
+            }, 1000);//Délai de chargement
         });
     }
     

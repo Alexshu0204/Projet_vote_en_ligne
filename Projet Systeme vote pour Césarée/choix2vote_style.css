@@ -1,0 +1,115 @@
+.main{
+    margin-top: 15px;
+    text-align: center;
+        font-family: 'Playfair Display', serif;
+}
+
+.voting_title{
+    font-size: 50px;
+}
+
+.insert_title{
+    margin-top: 50px;
+    font-size: 18px;
+}
+
+.voting_input{
+    margin-top: 10px;
+}
+
+/***********************************************************************
+-----------------------------TABLEAU------------------------------------
+***********************************************************************/
+
+.voting_table_container{
+    margin-top: 30px;
+    max-height: 461.5px;
+    overflow: auto;
+}
+
+#voting_table{
+    font-family: 'Montserrat', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    table-layout: fixed;
+    margin: auto;
+}
+
+#voting_table thead{
+    position: sticky;/*En-tête reste visible en haut au scroll*/
+    top: 0;
+    background-color: #04aa6d;
+    z-index: 2;
+}
+
+/* Réduit la largeur de la colonne "Action" */
+#voting_table td:nth-child(3), #voting_table th:nth-child(3) {
+    background-color: #e7e7e7;
+    text-align: center;
+    color: #fff;
+    width: 80px;
+}
+
+.delete-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+}
+
+.delete-btn:hover{
+    color: red;
+    transform: scale(1.2);
+}
+
+/*Tooltip*/
+.delete-btn::after{
+    content: "Supprimer";
+    visibility: hidden;
+    opacity: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-size: 12px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Affiche le tooltip au survol */
+.delete-btn:hover::after{
+    visibility: visible;
+    opacity: 1;
+}
+
+#voting_table td, #voting_table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 800px;
+    word-wrap: break-word;
+}
+
+/* Réduit la largeur de la colonne "Numéro vote" */
+#voting_table td:nth-child(1), #voting_table th:nth-child(1) {
+    width: 200px;
+}
+
+#voting_table tr:nth-child(even){background-color: #f2f2f2;} 
+
+#voting_table tr:hover {background-color: #e5e4e4;} 
+
+#voting_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D !important;
+    color: #fff;
+}
+

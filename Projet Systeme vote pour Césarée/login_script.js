@@ -34,10 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
         let width = 0;
 
         function animateProgress() {
-            if (width < 85) {
-                width += Math.random() * 10;
+            if (width < 95) {
+                width += Math.random() * 12;
                 progressBar.style.width = width + "%";
-                setTimeout(animateProgress, 150);
+                setTimeout(animateProgress, 120);
             }
         }
         animateProgress();

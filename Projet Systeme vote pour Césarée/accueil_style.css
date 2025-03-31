@@ -1,8 +1,21 @@
 body {
-    background: radial-gradient(circle, rgba(181, 43, 196, 0.7) 15%, rgba(92, 40, 165, 0.959) 60%, rgb(48, 26, 104) 100%);
+    background: radial-gradient(circle, rgba(139, 54, 200, 0.7) 15%, rgba(100, 52, 167, 0.959) 60%, rgb(56, 35, 109) 100%);
     z-index: -1;
 }
 
+/***************Création d'une animation fondue au chargement de la page****************/
+.evnt_container {
+    animation: fadeIn 0.65s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 .titre {
     font-weight: bold;
@@ -324,13 +337,5 @@ label span {
         padding: 20px;
     }
 }
-
-
-
-
-
-
-/*************************Style Menu***********************************/
-
 
 
