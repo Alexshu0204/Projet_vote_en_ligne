@@ -1,8 +1,3 @@
-/*création du fond*/
-/*body {
-    
-  }*/
-  
   /* Ajout d'un overlay polygonal en SVG */
   body::after {
     content: "";

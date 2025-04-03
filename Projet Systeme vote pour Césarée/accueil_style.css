@@ -1,7 +1,22 @@
 body {
-    background: radial-gradient(circle, rgba(139, 54, 200, 0.7) 15%, rgba(100, 52, 167, 0.959) 60%, rgb(56, 35, 109) 100%);
+    /*background: radial-gradient(circle, rgba(137, 73, 202, 0.7) 15%, rgba(91, 71, 173, 0.959) 60%, rgb(49, 66, 109) 100%);*/
     z-index: -1;
 }
+
+  /* Ajout d'un overlay polygonal en SVG */
+  body::after {
+    content: "";
+    position: fixed;/* Fixe l'overlay en arrière-plan */
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/triangles.png");
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: -1;/* Met l'overlay en arrière-plan */
+  }
+
 
 /***************Création d'une animation fondue au chargement de la page****************/
 .evnt_container {
@@ -25,7 +40,7 @@ body {
     text-shadow: 
         0 0 5px rgba(255, 20, 145, 0.5), 
         0 0 10px rgba(255, 105, 180, 0.4), 
-        2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre pour plus de lisibilité */
+        2px 2px 4px rgba(0, 0, 0, 0.141); /* Ombre pour plus de lisibilité */
     backdrop-filter: blur(12px);
 
     text-align: center;
@@ -78,9 +93,8 @@ body {
     font-size: 17px;
 
 /*Ajout d’un effet "verre dépoli" au formulaire*/
-    background: rgba(149, 128, 159, 0.52);
-    backdrop-filter: blur(3px);
-    border: 2px solid rgba(255, 255, 255, 0.44);
+    background: rgba(110, 95, 116, 0.756);
+    backdrop-filter: blur(1.5px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
 }
 
@@ -107,15 +121,15 @@ label span {
     width: 100%;
     height: 50px;
     border: none;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
+
     transition: 0.165s;
-    background-color: rgb(250, 235, 248);
+    background-color: rgb(254, 249, 253);
 }
 
 #eventID:focus{/* Personnalisation de l'apparence de l'input lorsqu'il est focus */
     outline: none;/*enlève le contour par défaut*/
     background-color:rgb(255, 255, 255);
-    box-shadow: 0 0 6px rgba(172, 94, 241, 0.849);
+
 }
 
 /*#eventID::placeholder{/*configuration du placeholder*/
@@ -124,6 +138,8 @@ label span {
 
 #eventID:hover{
     background-color:rgb(255, 255, 255);
+    transform: scale(1.02);
+    
 }
 
 #descriptionID{
@@ -138,16 +154,14 @@ label span {
     max-height: 400px; /* Pour limiter la hauteur si nécessaire */
     overflow-y: auto; /* Active le scroll vertical si besoin */
     border: none;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
     transition: 0.165s;
-    background-color: rgb(250, 235, 248);
+    background-color: rgb(254, 249, 253);
 }
 
 
 #descriptionID:focus{
     outline: none;
     background-color:rgb(255, 255, 255);
-    box-shadow: 0 0 6px rgba(172, 94, 241, 0.849);
 }
 
 /*#descriptionID::placeholder {/*configuration du placeholder*/
@@ -156,6 +170,7 @@ label span {
 
 #descriptionID:hover{
     background-color:rgb(255, 255, 255);
+    transform: scale(1.02);
 
 }
 
@@ -176,9 +191,7 @@ label span {
     padding: 20px;
 
 /*Ajout d’un effet "verre dépoli" au contenu de la date*/
-    background-color: rgba(246, 217, 208, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+    background-color: rgba(58, 49, 73, 0.448);
 }   
 
 .date_container div{
@@ -222,8 +235,7 @@ label span {
     border-radius: 6px;
     padding: 8px;
     border: none;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.21);
-    background-color:rgba(255, 255, 255,0.88);
+    background-color:rgba(255, 255, 255, 0.795);
     transition: 0.165s;
 }
 
@@ -275,8 +287,7 @@ label span {
     width: 70%;
     padding:20px;
     color: rgba(0, 0, 0, 0.992);
-    background-color: rgba(255, 255, 255, 0.547);
-    box-shadow: 0 8px 32px rgba(72, 3, 58, 0.5);
+    background-color: rgb(254, 249, 253);
     transition: color 0.2s ease;
     z-index: 1;
 }
@@ -298,9 +309,10 @@ label span {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgb(7, 185, 42);
-    transition: width 0.27s ease-in-out;
+    background-color: rgb(77, 59, 135);
+    transition: width 0.24s ease-in-out;
     z-index: 0;
+    border-radius: 12px;
 }
 
 #createButtonID:hover::after{
@@ -309,8 +321,6 @@ label span {
 
 #createButtonID:hover{
     color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 3px rgb(41, 5, 5);
-    box-shadow: 0 0 8px rgba(113, 65, 155, 0.2);
 }
 
 
