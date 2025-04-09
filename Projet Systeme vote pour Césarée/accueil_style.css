@@ -20,28 +20,6 @@ body {
     }
 }
 
-.titre {
-    font-weight: bold;
-    font-family: 'Playfair Display', serif;
-    background-color: #000000cc;
-    color: #fac61d;
-    text-shadow: 
-        0 0 5px rgba(255, 20, 145, 0.5), 
-        0 0 10px rgba(255, 105, 180, 0.4), 
-        2px 2px 4px rgba(0, 0, 0, 0.141); /* Ombre pour plus de lisibilité */
-    backdrop-filter: blur(12px);
-
-    text-align: center;
-    height: 100px; 
-    font-size: 2.3rem; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0; 
-    padding: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
-}
-
 /***********************************************************************
 ---------------------Tout le contenu du formulaire----------------------
 ***********************************************************************/
@@ -62,7 +40,7 @@ body {
 
 .evnt_container{
     font-family: 'Montserrat', sans-serif;
-    margin-top: 79px;
+    margin-top: 30px;
     width: 53%;
     height: auto;
     min-height: 590px;
@@ -75,9 +53,9 @@ body {
     font-size: 17px;
 
 /*Ajout d’un effet "verre dépoli" au formulaire*/
-    background: rgba(110, 95, 116, 0.756);
+    background: rgba(156, 134, 203, 0.982);
     backdrop-filter: blur(1.5px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    box-shadow: 0 8px 12px rgba(70, 1, 62, 0.366);
 }
 
 label i {
@@ -173,7 +151,7 @@ label span {
     padding: 20px;
 
 /*Ajout d’un effet "verre dépoli" au contenu de la date*/
-    background-color: rgba(58, 49, 73, 0.448);
+    background-color: rgba(86, 73, 107, 0.532);
 }   
 
 .date_container div{
@@ -268,8 +246,8 @@ label span {
     border-radius: 12px;
     width: 70%;
     padding:20px;
-    color: rgba(0, 0, 0, 0.992);
-    background-color: rgb(254, 249, 253);
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     transition: color 0.2s ease;
     z-index: 1;
 }
@@ -291,7 +269,7 @@ label span {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgb(77, 59, 135);
+    background-color: rgb(255, 255, 255);
     transition: width 0.24s ease-in-out;
     z-index: 0;
     border-radius: 12px;
@@ -302,7 +280,7 @@ label span {
 }
 
 #createButtonID:hover{
-    color: rgb(255, 255, 255);
+    color: rgb(0, 138, 12);
 }
 
 

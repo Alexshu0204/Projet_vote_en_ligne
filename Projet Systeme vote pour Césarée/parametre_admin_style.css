@@ -22,7 +22,7 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-.voting_title{
+.setting_title{
     font-size: 50px;
     font-family: 'Playfair Display', serif !important;
 }
@@ -34,7 +34,7 @@ body{
     text-underline-position: under;
 }
 
-.voting_input{
+.setting_input{
     margin-top: 18px;
     display: flex;
     justify-content: center;
@@ -60,7 +60,7 @@ body{
     transform: scale(1.03);
 }
 
-.voting_input button{
+.setting_input button{
     margin-top: 0.5px;
     width: 80px;
     padding: 10px;
@@ -72,7 +72,7 @@ body{
     background: linear-gradient(to bottom, #3498db, #2980b9);
 }
 
-.voting_input button:hover{
+.setting_input button:hover{
     transform: scale(1.1);
     background: linear-gradient(to bottom, #2980b9, #1c6690);
 }
@@ -81,13 +81,13 @@ body{
 -----------------------------TABLEAU------------------------------------
 ***********************************************************************/
 
-.voting_table_container{
+.setting_table_container{
     margin-top: 42px;
     max-height: 379px;
     overflow: auto;
 }
 
-#voting_table{
+#setting_table{
     font-family: 'Montserrat', sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -97,31 +97,30 @@ body{
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.28);
 }
 
-#voting_table thead{
+#setting_table thead{
     position: sticky;/*En-tête reste visible en haut au scroll*/
     top: 0;
     background-color: #1e6bb8;
     z-index: 2;
 }
 
-/* Nouvelle colonne image */
-#voting_table td:nth-child(3), #voting_table th:nth-child(3) {
-    width: 150px;
-    text-align: center;
-}
-
-#voting_table img {
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-}
-
-/* Réduit la largeur de la colonne "Action" */
-#voting_table td:nth-child(4), #voting_table th:nth-child(4) {
+/* Réduit la largeur de la colonne "Modifier" */
+#setting_table td:nth-child(3), #setting_table th:nth-child(3) {
     background-color: #e7e7e7;
     text-align: center;
     color: #fff;
     width: 120px;
 }
+
+/* Réduit la largeur de la colonne "Supprimer */
+#setting_table td:nth-child(4),
+#setting_table th:nth-child(4) {
+    background-color: #e7e7e7;
+    text-align: center;
+    color: #ffffff;
+    width: 120px;
+}
+
 
 .delete-btn {
     border: none;
@@ -161,7 +160,7 @@ body{
     opacity: 1;
 }
 
-#voting_table td, #voting_table th {
+#setting_table td, #setting_table th {
     border: 1px solid #a5b9ed;
     padding: 8px;
     width: 890px;
@@ -169,15 +168,15 @@ body{
 }
 
 /* Réduit la largeur de la colonne "Numéro vote" */
-#voting_table td:nth-child(1), #voting_table th:nth-child(1) {
+#setting_table td:nth-child(1), #setting_table th:nth-child(1) {
     width: 200px;
 }
 
-#voting_table tr:nth-child(even){background-color: #ffffff;} 
+#setting_table tr:nth-child(even){background-color: #ffffff;} 
 
-#voting_table tr:hover {background-color: #97cddd8f;} 
+#setting_table tr:hover {background-color: #97cddd8f;} 
 
-#voting_table th {
+#setting_table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;

@@ -4,18 +4,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     mettreAJourLien(); // Vérifie au chargement si le lien doit être désactivé
 
-    document.getElementById("inputValeur").addEventListener("keypress", function (event) {
-        if (event.key === "Enter") {
-            ajouterValeur();
-        }
-    });
+    // Ajoute les boutons "Modifier" et "Supprimer" aux lignes existantes
+    const lignes = document.querySelectorAll("#tableBody tr");
+    lignes.forEach(ajouterBoutonsLigne);
 
-    // Ajout de l'animation de la barre de progression au clic sur "Démarrer"
     nextButton.addEventListener("click", function (event) {
-        event.preventDefault(); // Empêche la redirection immédiate
+        event.preventDefault();
         startLoading();
 
-        // Redirige après 1 seconde
         setTimeout(() => {
             window.location.href = nextButton.getAttribute("href");
         }, 1000);
@@ -32,16 +28,14 @@ function mettreAJourLien() {
         nextButton.removeAttribute("href");
     } else {
         nextButton.classList.remove("disabled");
-        nextButton.setAttribute("href", "liste_evenement.html");
+        nextButton.setAttribute("href", "accueil.html");
     }
 }
 
-// Fonction pour ajouter une ligne au tableau
+// Fonction pour ajouter une nouvelle ligne (si tu veux en ajouter dynamiquement)
 function ajouterValeur() {
-    let inputText = document.getElementById("inputValeur");
-    let inputImage = document.getElementById("inputImage");
-    let valeur = inputText.value.trim();
-    let imageFile = inputImage.files[0];
+    let input = document.getElementById("inputValeur");
+    let valeur = input.value.trim();
 
     if (valeur !== "") {
         let tableBody = document.getElementById("tableBody");
@@ -49,55 +43,16 @@ function ajouterValeur() {
 
         let cell1 = newRow.insertCell(0);
         let cell2 = newRow.insertCell(1);
-        let cell3 = newRow.insertCell(2);
-        let cell4 = newRow.insertCell(3);
 
-        cell1.textContent = tableBody.children.length;
-        cell2.textContent = valeur;
-        cell2.setAttribute("title", "Double-cliquez pour modifier");
-        cell2.ondblclick = function () {
-            rendreEditable(cell2);
-        };
+        cell1.textContent = valeur;
+        cell2.textContent = "motdepasse"; // valeur par défaut ou à changer
 
-        // Si une image est sélectionnée
-        if (imageFile) {
-            let img = document.createElement("img");
-            img.src = URL.createObjectURL(imageFile);
-            img.alt = "Image de vote";
-            img.style.maxWidth = "100px";
-            img.style.height = "auto";
-            cell3.appendChild(img);
-        } else {
-            cell3.textContent = "—";
-        }
+        ajouterBoutonsLigne(newRow);
 
-        let deleteBtn = document.createElement("button");
-        deleteBtn.innerHTML = "❌";
-        deleteBtn.classList.add("delete-btn");
-        deleteBtn.onclick = function () {
-            newRow.remove();
-            mettreAJourNumerotation();
-            mettreAJourLien();
-        };
+        input.value = "";
+        input.focus();
 
-        cell4.appendChild(deleteBtn);
-        inputText.value = "";
-        inputImage.value = "";
-
-        mettreAJourNumerotation();
         mettreAJourLien();
-        inputText.focus();
-    }
-}
-
-
-// Met à jour la numérotation des lignes
-function mettreAJourNumerotation() {
-    let tableBody = document.getElementById("tableBody");
-    let rows = tableBody.getElementsByTagName("tr");
-
-    for (let i = 0; i < rows.length; i++) {
-        rows[i].cells[0].textContent = i + 1; // Re-numérote les lignes
     }
 }
 
@@ -114,7 +69,7 @@ function rendreEditable(cell) {
     input.focus();
 
     input.addEventListener("blur", function () {
-        cell.textContent = input.value || valeurActuelle; // Garde l'ancienne valeur si vide
+        cell.textContent = input.value || valeurActuelle;
     });
 
     input.addEventListener("keypress", function (event) {
@@ -122,6 +77,35 @@ function rendreEditable(cell) {
             cell.textContent = input.value || valeurActuelle;
         }
     });
+}
+
+// Fonction pour ajouter les boutons Modifier et Supprimer à une ligne
+function ajouterBoutonsLigne(row) {
+    // Bouton Modifier
+    const btnModifier = document.createElement("button");
+    btnModifier.textContent = "✏️";
+    btnModifier.className = "edit-btn";
+    btnModifier.onclick = function () {
+        rendreEditable(row.cells[0]);
+        rendreEditable(row.cells[1]);
+    };
+
+    // Cellule Modifier
+    const cellModifier = row.insertCell(2);
+    cellModifier.appendChild(btnModifier);
+
+    // Bouton Supprimer
+    const btnSupprimer = document.createElement("button");
+    btnSupprimer.textContent = "❌";
+    btnSupprimer.className = "delete-btn";
+    btnSupprimer.onclick = function () {
+        row.remove();
+        mettreAJourLien();
+    };
+
+    // Cellule Supprimer
+    const cellSupprimer = row.insertCell(3);
+    cellSupprimer.appendChild(btnSupprimer);
 }
 
 // ====================
@@ -135,7 +119,7 @@ function startLoading() {
 
     function animateProgress() {
         if (width < 100) {
-            width += Math.random() * 20; // Augmente aléatoirement la progression
+            width += Math.random() * 20;
             progressBar.style.width = width + "%";
             setTimeout(animateProgress, 100);
         } else {
@@ -151,11 +135,8 @@ function finishLoading() {
 
     setTimeout(() => {
         progressBar.style.opacity = "0";
-
         setTimeout(() => {
             progressBar.style.width = "0%";
         }, 3000);
-
     });
 }
-

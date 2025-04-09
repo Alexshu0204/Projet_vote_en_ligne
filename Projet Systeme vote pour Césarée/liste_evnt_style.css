@@ -22,7 +22,7 @@ body{
 .search-input {
     height: 50px;
     border-radius: 30px;
-    padding-left: 40px;
+    padding-left: 45px;
     border: 1px solid rgb(54, 54, 54);
 }
 
@@ -95,7 +95,7 @@ body{
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background: linear-gradient(to top, rgba(110, 95, 116, 0.756), rgba(98, 85, 103, 0.756)) !important;
+    background: linear-gradient(to top, rgba(141, 123, 148, 0.756), rgba(117, 103, 123, 0.756)) !important;
     color: #fff;
 }
 

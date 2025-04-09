@@ -80,6 +80,5 @@
 
 /*Lien du menu actuel*/
 .nav-link.active {
-    font-weight: bold;
-    color:rgb(255, 0, 0);
+    color:rgb(255, 0, 0) !important;
 }
